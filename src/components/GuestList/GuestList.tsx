@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useMockApi } from '../../api/useApi';
 import { GuestStatusBadge } from '../GuestStatusBadge/GuestStatusBadge';
-import type { Guest, Hotel, GuestStatus } from '../../types'; // Import types from central file
+import type { Guest, Hotel } from '../../types'; // Import types from central file
 
 export const GuestList = () => {
   const { getHotels, getGuests } = useMockApi();

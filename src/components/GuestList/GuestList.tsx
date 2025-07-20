@@ -29,7 +29,9 @@ export const GuestList = () => {
   }, []);
 
   const getGuestHotel = (guestId: string) => {
-    return hotels.find(hotel => hotel.activeGuests.includes(guestId));
+    return hotels.find(hotel => 
+      hotel?.activeGuests?.includes(guestId)
+      );
   };
 
   if (loading) return <div className="loading">Consulting the High Table...</div>;

@@ -43,7 +43,7 @@
     {
       "id": "JH-003",
       "name": "Ms. Perkins",
-      "status": ["Revoked", "Revoked"],
+      "status": ["Revoked", "Deceased"],
       "specialty": "Infiltration",
       "markersOwed": 0,
       "lastLocation": "New York"

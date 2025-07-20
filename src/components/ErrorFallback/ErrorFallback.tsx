@@ -7,7 +7,7 @@ type ErrorFallbackProps = {
 export const ErrorFallback = ({ 
   error, 
   resetErrorBoundary,
-  context = "application" 
+  // context = "application" 
 }: ErrorFallbackProps) => {
   return (
     <div className="error-fallback" role="alert">

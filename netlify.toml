@@ -1,7 +1,6 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  environment = { VITE_API_KEY = "c1fed0c5-7f85-445f-acae-8a31538cc21f" }
 
 [functions]
   directory = "netlify/functions"

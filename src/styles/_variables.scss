@@ -1,2 +1,40 @@
 $primary-color: #42b983;
 $text-color: #2c3e50;
+
+$status-colors: (
+  'active': (
+    bg: #14532d,
+    text: #d1fae5,
+    border: #047857
+  ),
+  'retired': (
+    bg: #78350f,
+    text: #fef3c7,
+    border: #b45309
+  ),
+  'deceased': (
+    bg: #881337,
+    text: #ffe4e6,
+    border: #be123c
+  ),
+  'revoked': (
+    bg: #581c87,
+    text: #f3e8ff,
+    border: #7e22ce
+  ),
+  'excommunicado': (
+    bg: #000000,
+    text: #ef4444,
+    border: #7f1d1d
+  ),
+  'consecrated': (
+    bg: rgba(20, 83, 45, 0.8),
+    text: #d1fae5,
+    border: #047857
+  ),
+  'deconsecrated': (
+    bg: rgba(153, 27, 27, 0.8),
+    text: #fee2e2,
+    border: #b91c1c
+  )
+);

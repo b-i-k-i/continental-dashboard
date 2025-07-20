@@ -4,6 +4,9 @@ import viteLogo from '/vite.svg'
 // import './App.css'
 import '@/styles/main.scss'
 
+import { GuestList } from './components/GuestList/GuestList';
+import { HotelList } from './components/HotelList/HotelList';
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -29,6 +32,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <HotelList />
+      <GuestList />
     </>
   )
 }

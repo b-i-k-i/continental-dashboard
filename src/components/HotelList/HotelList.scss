@@ -1,0 +1,89 @@
+.hotel-list {
+  max-width: 1200px;
+  margin: 2rem auto;
+  font-family: 'Helvetica Neue', sans-serif;
+
+  h2 {
+    color: #c0a062;
+    border-bottom: 1px solid #c0a062;
+    padding-bottom: 0.5rem;
+  }
+
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .hotel-card {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #c0a062;
+
+    .location {
+      color: #aaa;
+      font-style: italic;
+      margin: 0.5rem 0;
+    }
+
+    .guest-section {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 4px;
+
+      .guest-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px dashed #444;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .no-guests {
+        color: #777;
+        font-style: italic;
+      }
+    }
+
+    .status {
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+
+      &.active { background: #4caf50; color: white; }
+      &.retired { background: #ff9800; color: black; }
+      &.deceased { background: #f44336; color: white; }
+    }
+
+    .rules {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+
+      li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+
+        &::before {
+          content: "•";
+          color: #c0a062;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .loading {
+    text-align: center;
+    font-style: italic;
+    color: #c0a062;
+  }
+}

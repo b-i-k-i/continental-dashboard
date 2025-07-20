@@ -1,0 +1,52 @@
+{
+  "hotels": [
+    {
+      "id": "CONT-NYC-001",
+      "name": "The Continental New York",
+      "location": "Manhattan, NY",
+      "manager": "Winston Scott",
+      "rules": [
+        "No business on Continental grounds",
+        "Markers must be honored"
+      ],
+      "activeGuests": ["JH-001", "JH-003"]
+    },
+    {
+      "id": "CONT-PAR-002",
+      "name": "Le Continental Paris",
+      "location": "Rue de la Paix",
+      "manager": "Julius",
+      "rules": [
+        "No bloodshed in the lobby",
+        "All disputes settled by coin flip"
+      ],
+      "activeGuests": ["JH-002"]
+    }
+  ],
+  "guests": [
+    {
+      "id": "JH-001",
+      "name": "Jonathan Wick",
+      "status": ["Retired", "Active"],
+      "specialty": "Pencil elimination",
+      "markersOwed": 1,
+      "lastLocation": "New York"
+    },
+    {
+      "id": "JH-002",
+      "name": "Cassian",
+      "status": ["Active"],
+      "specialty": "Close-quarters combat",
+      "markersOwed": 0,
+      "lastLocation": "Paris"
+    },
+    {
+      "id": "JH-003",
+      "name": "Ms. Perkins",
+      "status": ["Revoked", "Revoked"],
+      "specialty": "Infiltration",
+      "markersOwed": 0,
+      "lastLocation": "New York"
+    }
+  ]
+}

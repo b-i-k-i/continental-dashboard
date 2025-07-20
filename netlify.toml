@@ -1,6 +1,19 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  environment = { VITE_API_KEY = "c1fed0c5-7f85-445f-acae-8a31538cc21f" }
 
 [functions]
   directory = "netlify/functions"
+
+[dev]
+  framework = "#custom"
+  command = "vite dev"
+  targetPort = 5173
+  autoLaunch = false
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api-proxy"
+  status = 200
+  force = true

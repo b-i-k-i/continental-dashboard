@@ -1,0 +1,25 @@
+export type GuestStatus = 
+  | 'Active'
+  | 'Retired'
+  | 'Deceased'
+  | 'Revoked'
+  | 'Excommunicado';
+
+export type Guest = {
+  id: string;
+  name: string;
+  status: GuestStatus[];
+  specialty: string;
+  markersOwed: number;
+  lastLocation: string;
+};
+
+export type Hotel = {
+  id: string;
+  name: string;
+  status: 'Consecrated' | 'Deconsecrated';
+  location: string;
+  manager: string;
+  rules: string[];
+  activeGuests: string[];
+};

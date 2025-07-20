@@ -1,5 +1,17 @@
+// Global Styles
 @import 'variables';
+@import 'mixins';
 
+// Component Styles
+@import '../components/HotelList/HotelList';
+@import '../components/GuestList/GuestList';
+
+// SubComponent Styles
+@import '../components/HotelStatusBadge/HotelStatusBadge';
+@import '../components/GuestStatusBadge/GuestStatusBadge';
+
+
+// I only want imports in this file, poopoo on this stuff
 body {
   font-family: 'Arial', sans-serif;
   color: $text-color;

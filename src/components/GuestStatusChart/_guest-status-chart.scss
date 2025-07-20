@@ -1,0 +1,98 @@
+.guest-status-chart {
+  background: rgba($primary-color, 0.05);
+  border: 1px solid rgba($primary-color, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  color: $text-color;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .chart-container {
+    height: 400px;
+    min-width: 300px;
+
+    // Dynamically generate status colors from global map
+    @each $status, $colors in $status-colors {
+      .status-#{$status} {
+        fill: map-get($colors, 'bg');
+        stroke: map-get($colors, 'border');
+        stroke-width: 1px;
+
+        &:hover {
+          fill: lighten(map-get($colors, 'bg'), 5%);
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  // Tooltip styling
+  .recharts-tooltip {
+    background: rgba($primary-color, 0.9) !important;
+    border: none !important;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: white;
+
+    &-label {
+      color: white !important;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    &-item {
+      color: white !important;
+
+      &-name {
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 0.75rem;
+          height: 0.75rem;
+          margin-right: 0.5rem;
+          background: currentColor;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  // Legend styling
+  .recharts-legend {
+    &-item {
+      &-text {
+        color: $text-color !important;
+        font-size: 0.875rem;
+      }
+
+      // Match legend colors to status colors
+      @each $status, $colors in $status-colors {
+        &[class*='#{$status}'] .recharts-legend-icon {
+          background-color: map-get($colors, 'bg');
+          border-color: map-get($colors, 'border');
+        }
+      }
+    }
+  }
+
+  // Center label styling
+  .chart-center-label {
+    fill: $primary-color;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  // Accessibility focus states
+  .recharts-sector:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}

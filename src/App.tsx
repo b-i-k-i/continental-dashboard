@@ -8,6 +8,7 @@ import '@/styles/main.scss'
 
 import { Loading } from './components/Loading/Loading'
 import { GuestList } from './components/GuestList/GuestList';
+import { GuestStatusChart } from './components/GuestStatusChart/GuestStatusChart';
 import { HotelList } from './components/HotelList/HotelList';
 import { ErrorFallback } from './components/ErrorFallback/ErrorFallback';
 
@@ -27,12 +28,9 @@ function App() {
       </header>
 
       <section className="content-section">
-        <ErrorBoundary
-          FallbackComponent={ErrorFallback}
-          onReset={() => window.location.reload()}
-        >
-          <Suspense fallback={<Loading message="Loading hotels..." fullScreen={false} />}>
-            <HotelList />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Suspense fallback={<Loading message="Loading analytics..." />}>
+            <GuestStatusChart />
           </Suspense>
         </ErrorBoundary>
       </section>
@@ -47,6 +45,18 @@ function App() {
           </Suspense>
         </ErrorBoundary>
       </section>
+
+      <section className="content-section">
+        <ErrorBoundary
+          FallbackComponent={ErrorFallback}
+          onReset={() => window.location.reload()}
+        >
+          <Suspense fallback={<Loading message="Loading hotels..." fullScreen={false} />}>
+            <HotelList />
+          </Suspense>
+        </ErrorBoundary>
+      </section>
+
     </main>
   );
 }

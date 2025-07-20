@@ -1,23 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useMockApi } from '../../api/useApi';
-
 import { GuestStatusBadge } from '../GuestStatusBadge/GuestStatusBadge';
-
-type Guest = {
-  id: string;
-  name: string;
-  status: string;
-  specialty: string;
-  markersOwed: number;
-  lastLocation: string;
-};
-
-type Hotel = {
-  id: string;
-  name: string;
-  location: string;
-  activeGuests: string[];
-};
+import type { Guest, Hotel, GuestStatus } from '../../types'; // Import types from central file
 
 export const GuestList = () => {
   const { getHotels, getGuests } = useMockApi();
@@ -28,7 +12,10 @@ export const GuestList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [hotelData, guestData] = await Promise.all([getHotels(), getGuests()]);
+        const [hotelData, guestData] = await Promise.all([
+          getHotels(),
+          getGuests()
+        ]);
         setHotels(hotelData);
         setGuests(guestData);
       } catch (error) {
@@ -57,7 +44,17 @@ export const GuestList = () => {
           return (
             <li key={guest.id} className="guest-card">
               <h3>{guest.name}</h3>
-              <GuestStatusBadge statuses={guest.status} />
+              <div className="guest-status">
+                <GuestStatusBadge 
+                  statuses={guest.status} 
+                  guestId={guest.id} 
+                />
+                {guest.markersOwed > 0 && (
+                  <span className="marker-warning">
+                    {guest.markersOwed} unpaid marker(s)
+                  </span>
+                )}
+              </div>
               <p><strong>Specialty:</strong> {guest.specialty}</p>
               <p><strong>Last seen:</strong> {guest.lastLocation}</p>
               {hotel && (

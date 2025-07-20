@@ -6,16 +6,16 @@ import { HotelStatusBadge } from '../HotelStatusBadge/HotelStatusBadge';
 
 export const HotelList = () => {
   const { getHotels, getGuests } = useMockApi();
-  const [hotels, setHotels] = useState<Hotel[]>([]);
-  const [guests, setGuests] = useState<Guest[]>([]);
+  const [hotels, setHotels] = useState<Hotel[]>([]); // Explicit type
+  const [guests, setGuests] = useState<Guest[]>([]); // Explicit type
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [hotelData, guestData] = await Promise.all([
-          getHotels(),
-          getGuests()
+          getHotels(), // Returns Promise<Hotel[]>
+          getGuests()  // Returns Promise<Guest[]>
         ]);
         setHotels(hotelData);
         setGuests(guestData);
@@ -94,7 +94,10 @@ export const HotelList = () => {
                         )}
                       </div>
                       <div className="mt-2">
-                        <GuestStatusBadge statuses={guest.status} guestId={guest.id} />
+                        <GuestStatusBadge 
+                          statuses={guest.status} 
+                          guestId={guest.id}  // Properly typed
+                        />
                       </div>
                       <p className="text-sm mt-1">
                         Specialty: <span className="text-continental-gold/80">{guest.specialty}</span>

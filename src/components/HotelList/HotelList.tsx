@@ -6,18 +6,24 @@ import { HotelStatusBadge } from '../HotelStatusBadge/HotelStatusBadge';
 
 export const HotelList = () => {
   const { getHotels, getGuests } = useMockApi();
-  const [hotels, setHotels] = useState<Hotel[]>([]); // Explicit type
-  const [guests, setGuests] = useState<Guest[]>([]); // Explicit type
+  const [hotels, setHotels] = useState<Hotel[]>([]);
+  const [guests, setGuests] = useState<Guest[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [hotelData, guestData] = await Promise.all([
-          getHotels(), // Returns Promise<Hotel[]>
-          getGuests()  // Returns Promise<Guest[]>
+          getHotels(),
+          getGuests()
         ]);
-        setHotels(hotelData);
+
+        const validatedHotels = hotelData.map(hotel => ({
+          ...hotel,
+          activeGuests: Array.isArray(hotel.activeGuests) ? hotel.activeGuests : []
+        }))
+
+        setHotels(validatedHotels);
         setGuests(guestData);
       } catch (error) {
         console.error('Failed to fetch Continental data:', error);
@@ -34,7 +40,7 @@ export const HotelList = () => {
     console.log('Current guests data:', JSON.stringify(guests, null, 2));
 
     const hotel = hotels.find(h => h.id === hotelId);
-    if (!hotel) return [];
+    if (!hotel || !Array.isArray(hotel?.activeGuests)) return [];
     
     return guests
       .filter(guest => hotel.activeGuests.includes(guest.id))

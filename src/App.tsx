@@ -10,7 +10,7 @@ import { HotelList } from './components/HotelList/HotelList';
 import { ErrorFallback } from './components/ErrorFallback/ErrorFallback';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>

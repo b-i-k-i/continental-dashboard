@@ -3,7 +3,8 @@ export type GuestStatus =
   | 'Retired'
   | 'Deceased'
   | 'Revoked'
-  | 'Excommunicado';
+  | 'Excommunicado'
+  | 'Pending';
 
 export type Guest = {
   id: string;

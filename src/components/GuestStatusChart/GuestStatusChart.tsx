@@ -1,12 +1,13 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Label, Legend } from 'recharts';
 import mockData from '@/api/mockData.json';
+import type { GuestStatus } from '../../types'; // Import your GuestStatus type
 
 interface GuestStatusChartProps {
-  onStatusClick: (status: string) => void;
-  activeFilter?: string | null;
+  onStatusClick: (status: GuestStatus) => void;
+  activeFilters?: GuestStatus[]; // Now accepts an array
 }
 
-export const GuestStatusChart = ({ onStatusClick, activeFilter }: GuestStatusChartProps) => {
+export const GuestStatusChart = ({ onStatusClick, activeFilters = [] }: GuestStatusChartProps) => {
   const statusData = mockData.guests.reduce((acc, guest) => {
     guest.status.forEach(s => {
       const existing = acc.find(item => item.name === s);
@@ -17,7 +18,11 @@ export const GuestStatusChart = ({ onStatusClick, activeFilter }: GuestStatusCha
       });
     });
     return acc;
-  }, [] as { name: string; count: number; id: string }[]);
+  }, [] as { name: GuestStatus; count: number; id: string }[]);
+
+  const handleSegmentClick = (status: GuestStatus) => {
+    onStatusClick(status);
+  };
 
   return (
     <section 
@@ -41,7 +46,7 @@ export const GuestStatusChart = ({ onStatusClick, activeFilter }: GuestStatusCha
               paddingAngle={2}
               dataKey="count"
               nameKey="name"
-              onClick={(_, index) => onStatusClick(statusData[index].name)}
+              onClick={(_, index) => handleSegmentClick(statusData[index].name)}
               label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
               labelLine={false}
               aria-label="Guest status segments"
@@ -50,13 +55,15 @@ export const GuestStatusChart = ({ onStatusClick, activeFilter }: GuestStatusCha
                 <Cell
                   key={`cell-${entry.id}`}
                   id={entry.id}
-                  className={`status-${entry.id} ${activeFilter === entry.name ? 'active-segment' : ''}`}
+                  className={`status-${entry.id} ${
+                    activeFilters.includes(entry.name) ? 'active-segment' : ''
+                  }`}
                   style={{ cursor: 'pointer' }}
                   aria-label={`${entry.name} status: ${entry.count} guests`}
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
-                      onStatusClick(entry.name);
+                      handleSegmentClick(entry.name);
                     }
                   }}
                 />
@@ -83,7 +90,7 @@ export const GuestStatusChart = ({ onStatusClick, activeFilter }: GuestStatusCha
               verticalAlign="bottom"
               wrapperStyle={{ paddingTop: '20px' }}
               iconType="circle"
-              onClick={(data) => onStatusClick(data.value)}
+              onClick={(data) => handleSegmentClick(data.value as GuestStatus)}
             />
           </PieChart>
         </ResponsiveContainer>

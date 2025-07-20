@@ -36,8 +36,8 @@ export const HotelList = () => {
 
   const getHotelGuests = (hotelId: string) => {
     // Server-specific data error debuggery
-    console.log('Current hotels data:', JSON.stringify(hotels, null, 2));
-    console.log('Current guests data:', JSON.stringify(guests, null, 2));
+    // console.log('Current hotels data:', JSON.stringify(hotels, null, 2));
+    // console.log('Current guests data:', JSON.stringify(guests, null, 2));
 
     const hotel = hotels.find(h => h.id === hotelId);
     if (!hotel || !Array.isArray(hotel?.activeGuests)) return [];

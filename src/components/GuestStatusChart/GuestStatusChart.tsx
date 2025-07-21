@@ -30,7 +30,7 @@ export const GuestStatusChart = ({ onStatusClick, activeFilters = [] }: GuestSta
       aria-labelledby="chart-title"
       role="region"
     >
-      <h3 id="chart-title">Guest Status Distribution</h3>
+      <h3 id="chart-title">Global Guest Status Distribution</h3>
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={400}>
           <PieChart

@@ -89,3 +89,263 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+// etc
+
+/* Continental-themed styles */
+.guest-list {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #e0e0e0;
+  background-color: #121212;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gold-text {
+  color: #c0a062;
+  text-shadow: 0 0 2px rgba(192, 160, 98, 0.5);
+}
+
+.list-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.badge {
+  background: #333;
+  color: #c0a062;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+/* Filters */
+.filters-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filters button, .clear-filters {
+  padding: 6px 12px;
+  border: 1px solid #c0a062;
+  background: transparent;
+  color: #c0a062;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.filters button:hover, .clear-filters:hover {
+  background: rgba(192, 160, 98, 0.1);
+}
+
+.filters button.active-filter {
+  background: #c0a062;
+  color: #121212;
+  font-weight: bold;
+}
+
+.clear-filters {
+  background: rgba(192, 160, 98, 0.2);
+}
+
+.active-filters-display {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  background: rgba(192, 160, 98, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Guest Cards */
+.guest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.guest-card {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.guest-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Marker severity colors */
+.guest-card.none-marker {
+  border-left: 4px solid #333;
+}
+
+.guest-card.low-marker {
+  border-left: 4px solid #4caf50;
+}
+
+.guest-card.medium-marker {
+  border-left: 4px solid #ff9800;
+}
+
+.guest-card.high-marker {
+  border-left: 4px solid #f44336;
+}
+
+.guest-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.guest-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.codename {
+  color: #c0a062;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.guest-details {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.guest-details strong {
+  color: #c0a062;
+}
+
+/* Bounty styles */
+.bounty {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.active-bounty {
+  background: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+}
+
+.excommunicado-warning {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ff9800;
+}
+
+.coin-icon, .warning-icon, .marker-icon {
+  font-size: 1rem;
+}
+
+/* Marker alert */
+.marker-alert {
+  margin: 0.75rem 0;
+  padding: 0.5rem;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.marker-alert small {
+  opacity: 0.8;
+  margin-left: auto;
+}
+
+/* Hotel affiliation */
+.hotel-affiliation {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #333;
+}
+
+.hotel-name {
+  color: #c0a062;
+  margin-left: 0.5rem;
+}
+
+.hotel-id {
+  color: #888;
+  font-family: monospace;
+}
+
+.hotel-affiliation.none {
+  color: #888;
+  font-style: italic;
+}
+
+/* Loading and error states */
+.loading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.continental-loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #c0a062;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  background: rgba(244, 67, 54, 0.1);
+  padding: 2rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #f44336;
+}
+
+.error h2 {
+  color: #f44336;
+  margin-top: 0;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #888;
+  font-style: italic;
+}

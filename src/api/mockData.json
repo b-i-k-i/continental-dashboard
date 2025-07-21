@@ -5,48 +5,581 @@
       "name": "The Continental New York",
       "location": "Manhattan, NY",
       "manager": "Winston Scott",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 12500000,
+      "annualExpenses": 8500000,
       "rules": [
         "No business on Continental grounds",
-        "Markers must be honored"
+        "Markers must be honored",
+        "All services require gold coins"
       ],
-      "activeGuests": ["JH-001", "JH-003"]
+      "activeGuests": ["JH-001", "JH-003", "JH-007", "JH-011"]
     },
     {
       "id": "CONT-PAR-002",
       "name": "Le Continental Paris",
       "location": "Rue de la Paix",
       "manager": "Julius",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 9800000,
+      "annualExpenses": 6200000,
       "rules": [
         "No bloodshed in the lobby",
-        "All disputes settled by coin flip"
+        "All disputes settled by coin flip",
+        "Silence in the hallways"
       ],
-      "activeGuests": ["JH-002"]
+      "activeGuests": ["JH-002", "JH-009", "JH-015"]
+    },
+    {
+      "id": "CONT-ROM-003",
+      "name": "Il Continental Roma",
+      "location": "Piazza Navona",
+      "manager": "Dante Moretti",
+      "consecrationStatus": "Conditional",
+      "annualRevenue": 7500000,
+      "annualExpenses": 5500000,
+      "rules": [
+        "No weapons in dining areas",
+        "All debts settled within 24 hours",
+        "Dress code enforced after 6pm"
+      ],
+      "activeGuests": ["JH-004", "JH-008", "JH-014"]
+    },
+    {
+      "id": "CONT-TKY-004",
+      "name": "The Continental Tokyo",
+      "location": "Ginza District",
+      "manager": "Akira Shimazu",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 11000000,
+      "annualExpenses": 6800000,
+      "rules": [
+        "No killing on the premises",
+        "All services must be paid in advance",
+        "No pets allowed"
+      ],
+      "activeGuests": ["JH-005", "JH-010", "JH-013"]
+    },
+    {
+      "id": "CONT-MEX-006",
+      "name": "El Continental Ciudad de México",
+      "location": "Zona Rosa",
+      "manager": "Carmen Mendoza",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 8200000,
+      "annualExpenses": 5800000,
+      "rules": [
+        "No cartel business on premises",
+        "Loud tarties forbidden after midnight"
+      ],
+      "activeGuests": ["JH-016", "JH-027"]
+    },
+    {
+      "id": "CONT-BRA-007",
+      "name": "O Continental Rio",
+      "location": "Copacabana",
+      "manager": "Luis Oliveira",
+      "consecrationStatus": "Conditional",
+      "annualRevenue": 7800000,
+      "annualExpenses": 6200000,
+      "rules": [
+        "No weapons during Carnival",
+        "All disputes may be settled with capoeira duel"
+      ],
+      "activeGuests": ["JH-018", "JH-032"]
+    },
+    {
+      "id": "CONT-ZAF-008",
+      "name": "The Continental Cape Town",
+      "location": "Victoria & Alfred Waterfront",
+      "manager": "Nomsa Khumalo",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 7100000,
+      "annualExpenses": 4900000,
+      "rules": [
+        "Table Mountain visible from all rooms (by design)",
+        "Rooibos tea served with all interrogations"
+      ],
+      "activeGuests": ["JH-019", "JH-035"]
+    },
+    {
+      "id": "CONT-EGY-009",
+      "name": "The Continental Cairo",
+      "location": "Garden City",
+      "manager": "Amir El-Sayed",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 6800000,
+      "annualExpenses": 5200000,
+      "rules": [
+        "Ancient artifacts accepted as collateral",
+        "Shisha lounge is neutral territory"
+      ],
+      "activeGuests": ["JH-021", "JH-038"]
+    },
+    {
+      "id": "CONT-SAU-010",
+      "name": "Al Continental Riyadh",
+      "location": "Al Olaya District",
+      "manager": "Yousef Al-Faisal",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 9500000,
+      "annualExpenses": 5500000,
+      "rules": [
+        "Business attire required at all times",
+        "No markers during prayer hours",
+        "Coffee ceremonies mandatory for negotiations"
+      ],
+      "activeGuests": ["JH-023", "JH-040"]
+    },
+    {
+      "id": "CONT-EST-011",
+      "name": "The Continental Tallinn",
+      "location": "Old Town",
+      "manager": "Marta Kask",
+      "consecrationStatus": "Conditional",
+      "annualRevenue": 5300000,
+      "annualExpenses": 4100000,
+      "rules": [
+        "Digital currencies accepted",
+        "No killing during white nights"
+      ],
+      "activeGuests": ["JH-025", "JH-042"]
+    },
+    {
+      "id": "CONT-IND-012",
+      "name": "The Continental Mumbai",
+      "location": "Colaba",
+      "manager": "Rajiv Malhotra",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 8800000,
+      "annualExpenses": 6700000,
+      "rules": [
+        "No business during monsoon season"
+      ],
+      "activeGuests": ["JH-028", "JH-044"]
+    },
+    {
+      "id": "CONT-NOR-013",
+      "name": "The Continental Oslo",
+      "location": "Aker Brygge",
+      "manager": "Ingrid Solberg",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 7200000,
+      "annualExpenses": 4800000,
+      "rules": [
+        "No business during Northern Lights viewing",
+        "Aquavit is the drink of reconciliation"
+      ],
+      "activeGuests": ["JH-030", "JH-046"]
+    },
+    {
+      "id": "CONT-CHN-014",
+      "name": "The Continental Shanghai",
+      "location": "The Bund",
+      "manager": "Wei Zhang",
+      "consecrationStatus": "Conditional",
+      "annualRevenue": 12500000,
+      "annualExpenses": 8200000,
+      "rules": [
+        "No business during Lunar New Year",
+        "Tea ceremonies precede all negotiations"
+      ],
+      "activeGuests": ["JH-033", "JH-048"]
+    },
+    {
+      "id": "CONT-AUS-015",
+      "name": "The Continental Sydney",
+      "location": "Circular Quay",
+      "manager": "Jack Taylor",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 9200000,
+      "annualExpenses": 6500000,
+      "rules": [
+        "All disputes may be settled with cricket match",
+        "Vegemite served with all room service"
+      ],
+      "activeGuests": ["JH-036", "JH-050"]
+    },
+    {
+      "id": "CONT-ESP-016",
+      "name": "El Continental Barcelona",
+      "location": "Las Ramblas",
+      "manager": "Isabella Cortez",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 8700000,
+      "annualExpenses": 5900000,
+      "rules": [
+        "No business during siesta"
+      ],
+      "activeGuests": ["JH-039", "JH-052"]
+    },
+    {
+      "id": "CONT-THA-017",
+      "name": "The Continental Bangkok",
+      "location": "Silom District",
+      "manager": "Somsak Chaiwat",
+      "consecrationStatus": "Conditional",
+      "annualRevenue": 8100000,
+      "annualExpenses": 5700000,
+      "rules": [
+        "No business during Songkran",
+        "Mango sticky rice served with all interrogations"
+      ],
+      "activeGuests": ["JH-041", "JH-054"]
+    },
+    {
+      "id": "CONT-KOR-018",
+      "name": "The Continental Seoul",
+      "location": "Gangnam District",
+      "manager": "Min-ji Park",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 9400000,
+      "annualExpenses": 6800000,
+      "rules": [
+        "No business during Chuseok",
+        "All negotiations begin with soju",
+        "Karaoke room is neutral territory"
+      ],
+      "activeGuests": ["JH-043", "JH-056"]
+    },
+    {
+      "id": "CONT-UAE-019",
+      "name": "Al Continental Dubai",
+      "location": "Downtown Dubai",
+      "manager": "Khalid Al-Maktoum",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 15000000,
+      "annualExpenses": 9000000,
+      "rules": [
+        "Gold leaf martinis standard issue",
+        "No business during Ramadan daylight hours",
+        "Helipad duels must be scheduled 24h in advance"
+      ],
+      "activeGuests": ["JH-045", "JH-058"]
+    },
+    {
+      "id": "CONT-DEU-020",
+      "name": "Das Continental Berlin",
+      "location": "Mitte District",
+      "manager": "Klaus Mueller",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 8300000,
+      "annualExpenses": 6000000,
+      "rules": [
+        "No business during Oktoberfest",
+        "All contracts must be in triplicate",
+        "Beer garden is neutral territory"
+      ],
+      "activeGuests": ["JH-047", "JH-060"]
+    },
+    {
+      "id": "CONT-KEN-021",
+      "name": "The Continental Nairobi",
+      "location": "Westlands",
+      "manager": "Wanjiku Mwangi",
+      "consecrationStatus": "Conditional",
+      "annualRevenue": 6700000,
+      "annualExpenses": 4900000,
+      "rules": [
+        "Safari vehicles available for discreet transport",
+        "Coffee ceremonies mandatory for all negotiations"
+      ],
+      "activeGuests": ["JH-049", "JH-062"]
+    },
+    {
+      "id": "CONT-ARG-022",
+      "name": "El Continental Buenos Aires",
+      "location": "Recoleta",
+      "manager": "Diego Morales",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 7600000,
+      "annualExpenses": 5500000,
+      "rules": [
+        "All disputes may be settled with knife duel",
+        "Malbec is the blood of negotiations"
+      ],
+      "activeGuests": ["JH-051", "JH-064"]
+    },
+    {
+      "id": "CONT-CAN-023",
+      "name": "The Continental Toronto",
+      "location": "Yorkville",
+      "manager": "Sarah MacKenzie",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 8900000,
+      "annualExpenses": 6100000,
+      "rules": [
+        "No business during hockey playoffs",
+        "All apologies must include Tim Hortons",
+        "Maple syrup is acceptable collateral"
+      ],
+      "activeGuests": ["JH-053", "JH-066"]
+    },
+    {
+      "id": "CONT-SGP-024",
+      "name": "The Continental Singapore",
+      "location": "Marina Bay",
+      "manager": "Wei Ling Tan",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 13500000,
+      "annualExpenses": 8500000,
+      "rules": [
+        "No chewing gum on premises",
+        "All business must be exceptionally clean",
+        "Chili crab served during all interrogations"
+      ],
+      "activeGuests": ["JH-055", "JH-068"]
+    },
+    {
+      "id": "CONT-TUR-025",
+      "name": "The Continental Istanbul",
+      "location": "Beyoğlu",
+      "manager": "Emre Yılmaz",
+      "consecrationStatus": "Sacred",
+      "annualRevenue": 9200000,
+      "annualExpenses": 6400000,
+      "rules": [
+        "No business during call to prayer",
+        "All negotiations begin with Turkish coffee"
+      ],
+      "activeGuests": ["JH-057", "JH-070"]
+    },
+    {
+      "id": "CONT-MOS-005",
+      "name": "The Continental Moscow",
+      "location": "Red Square District",
+      "manager": "Viktor Petrov",
+      "consecrationStatus": "Excommunicado",
+      "annualRevenue": 6500000,
+      "annualExpenses": 7000000,
+      "rules": [
+        "No police involvement",
+        "All disputes settled by management",
+        "Vodka is the only accepted drink"
+      ],
+      "activeGuests": ["JH-006", "JH-012"]
     }
   ],
   "guests": [
     {
       "id": "JH-001",
       "name": "Jonathan Wick",
-      "status": ["Retired", "Active"],
-      "specialty": "Pencil elimination",
+      "codename": "Baba Yaga",
+      "status": ["Retired", "Pending"],
+      "specialty": "Improvised weaponry, hand to hand combat, good husband",
       "markersOwed": 1,
-      "lastLocation": "New York"
+      "markersFulfilled": 1,
+      "lastLocation": "Greece",
+      "activeBounty": 14000000
     },
     {
       "id": "JH-002",
       "name": "Cassian",
+      "codename": "The Silent Blade",
       "status": ["Active"],
       "specialty": "Close-quarters combat",
       "markersOwed": 0,
-      "lastLocation": "Paris"
+      "markersFulfilled": 0,
+      "lastLocation": "Paris",
+      "activeBounty": 0
     },
     {
       "id": "JH-003",
       "name": "Ms. Perkins",
+      "codename": "The Viper",
       "status": ["Revoked", "Deceased"],
       "specialty": "Infiltration",
       "markersOwed": 0,
-      "lastLocation": "New York"
+      "markersFulfilled": 0,
+      "lastLocation": "New York",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-004",
+      "name": "Kirill Nemirov",
+      "codename": "The Siberian Express",
+      "status": ["Active"],
+      "specialty": "Arctic operations",
+      "markersOwed": 2,
+      "markersFulfilled": 1,
+      "lastLocation": "Moscow",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-005",
+      "name": "Dante Moretti",
+      "codename": "The Roman Candle",
+      "status": ["Retired"],
+      "specialty": "Incendiary weapons",
+      "markersOwed": 0,
+      "markersFulfilled": 3,
+      "lastLocation": "Rome",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-006",
+      "name": "Aiko Tanaka",
+      "codename": "The Ghost Blossom",
+      "status": ["Deceased", "Excommunicado"],
+      "specialty": "Poisoned blades",
+      "markersOwed": 1,
+      "markersFulfilled": 0,
+      "lastLocation": "Osaka",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-007",
+      "name": "Marcus King",
+      "codename": "The Long Goodnight",
+      "status": ["Deceased"],
+      "specialty": "Sniper operations",
+      "markersOwed": 0,
+      "markersFulfilled": 2,
+      "lastLocation": "New York",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-008",
+      "name": "Sophia Al-Azwar",
+      "codename": "Desert Falcon",
+      "status": ["Active"],
+      "specialty": "Urban warfare",
+      "markersOwed": 0,
+      "markersFulfilled": 1,
+      "lastLocation": "Casablanca",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-009",
+      "name": "Viktor Petrov",
+      "codename": "The Icebreaker",
+      "status": ["Revoked"],
+      "specialty": "Interrogation",
+      "markersOwed": 3,
+      "markersFulfilled": 0,
+      "lastLocation": "St. Petersburg",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-010",
+      "name": "Isabella Cortez",
+      "codename": "La Sombra",
+      "status": ["Active"],
+      "specialty": "Disappearances",
+      "markersOwed": 0,
+      "markersFulfilled": 4,
+      "lastLocation": "Barcelona",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-011",
+      "name": "Tariq Nassar",
+      "codename": "The Sandman",
+      "status": ["Pending"],
+      "specialty": "Sleep deprivation techniques",
+      "markersOwed": 1,
+      "markersFulfilled": 1,
+      "lastLocation": "Dubai",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-012",
+      "name": "Anya Volkova",
+      "codename": "Red Mamba",
+      "status": ["Active"],
+      "specialty": "Seduction operations",
+      "markersOwed": 0,
+      "markersFulfilled": 2,
+      "lastLocation": "Kyiv",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-013",
+      "name": "Hector Morales",
+      "codename": "El Matador",
+      "status": ["Retired"],
+      "specialty": "Bullfighting-style kills",
+      "markersOwed": 0,
+      "markersFulfilled": 0,
+      "lastLocation": "Mexico City",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-014",
+      "name": "Wei Zhang",
+      "codename": "The Paper Tiger",
+      "status": ["Active"],
+      "specialty": "Document forgery",
+      "markersOwed": 2,
+      "markersFulfilled": 1,
+      "lastLocation": "Hong Kong",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-015",
+      "name": "Lucien Bouchard",
+      "codename": "Le Fantôme",
+      "status": ["Deceased"],
+      "specialty": "High-profile kidnappings",
+      "markersOwed": 0,
+      "markersFulfilled": 0,
+      "lastLocation": "Montreal",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-016",
+      "name": "Kaito Shimizu",
+      "codename": "The Ronin",
+      "status": ["Excommunicado"],
+      "specialty": "Katana duels",
+      "markersOwed": 1,
+      "markersFulfilled": 0,
+      "lastLocation": "Tokyo",
+      "activeBounty": 7000000
+    },
+    {
+      "id": "JH-017",
+      "name": "Nadia Volkov",
+      "codename": "The Black Swan",
+      "status": ["Active"],
+      "specialty": "Ballet-inspired combat",
+      "markersOwed": 0,
+      "markersFulfilled": 1,
+      "lastLocation": "Vienna",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-018",
+      "name": "Rafael Ortega",
+      "codename": "El Toro",
+      "status": ["Pending"],
+      "specialty": "Brute force entry",
+      "markersOwed": 1,
+      "markersFulfilled": 0,
+      "lastLocation": "Buenos Aires",
+      "activeBounty": 0
+    },
+    {
+      "id": "JH-019",
+      "name": "Valentina Petrova",
+      "codename": "Winter Witch",
+      "status": ["Excommunicado"],
+      "specialty": "Cryogenic weapons",
+      "markersOwed": 2,
+      "markersFulfilled": 0,
+      "lastLocation": "Murmansk",
+      "activeBounty": 9000000
+    },
+    {
+      "id": "JH-020",
+      "name": "Dragan Ilic",
+      "codename": "The Belgrade Butcher",
+      "status": ["Excommunicado"],
+      "specialty": "Meatpacking accidents",
+      "markersOwed": 4,
+      "markersFulfilled": 0,
+      "lastLocation": "Belgrade",
+      "activeBounty": 12000000
     }
   ]
 }

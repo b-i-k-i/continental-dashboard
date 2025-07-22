@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useMockApi } from '../../api/useApi';
 import type { Hotel, Guest, GuestStatus } from '../../types';
 import { GuestStatusBadge } from '../GuestStatusBadge/GuestStatusBadge';
-import { HotelStatusBadge } from '../HotelStatusBadge/HotelStatusBadge';
 
 export const HotelList = () => {
   const { getHotels, getGuests } = useMockApi();
@@ -74,9 +73,6 @@ export const HotelList = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {hotels.map(hotel => (
           <div key={hotel.id} className="relative hotel-card bg-continental-dark text-continental-light p-6 rounded-lg border-l-4 border-continental-gold shadow-xl hover:shadow-2xl transition-shadow">
-            <div className="absolute top-4 right-4">
-              <HotelStatusBadge status={hotel.status} />
-            </div>
             
             <h3 className="text-xl font-bold pr-8">{hotel.name}</h3>
             <p className="location italic text-continental-light/70 mt-1">{hotel.location}</p>
@@ -122,7 +118,7 @@ export const HotelList = () => {
               )}
             </div>
 
-            <div className="rules mt-6">
+            {/* <div className="rules mt-6">
               <h4 className="font-bold mb-3 text-lg">House Rules:</h4>
               <ul className="space-y-3">
                 {hotel.rules.map((rule, i) => (
@@ -132,7 +128,7 @@ export const HotelList = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

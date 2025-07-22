@@ -1,69 +1,107 @@
-# React + TypeScript + Vite
+# 📊 Continental Dashboard  
+*React + TypeScript dashboard for guest engagement analytics*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Quick Start  
+```bash
+npm install
+npm run dev
+npm run test
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠 Implementation  
+### Data Flow  
+- **API Mocking**: `fetchGuests()` in `/src/api/` with 300ms delay  
+- **Filters**: Multi-select by status (tested in `GuestList.test.tsx`)  
+- **Chart**: Recharts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Styling  
+- **SCSS Architecture**:  
+  ```
+  styles/
+  ├── main.scss       # Central import  
+  ├── _variables.scss # Design tokens  
+  └── components/     # BEM-scoped partials  
+  ```  
+- **Why**: Optimized for large-scale maintainability  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## GuestList Component  
+```tsx
+<GuestList />
+```  
+
+**Purpose**: Displays and filters all Continental guests with their statuses and affiliations  
+
+### Core Features  
+- 🔍 **Multi-Filter System**:  
+  ```ts
+  type FilterType = 'all' | 'active' | 'excommunicado' | 'pending' | 'deceased' | 'retired'
+  ```  
+  - Toggle multiple filters simultaneously  
+  - Clear all filters with one click
+
+- 🏷️ **Guest Status Tracking**:  
+  - Priority-sorted status badges (`GuestStatusBadge`)  
+  - Visual indicators for:  
+    - Unpaid markers (severity levels)  
+    - Active bounties  
+    - Excommunicado status  
+
+- 🏨 **Hotel Affiliation**:  
+  - Shows current Continental hotel for each guest  
+  - "No affiliation" state for unregistered guests  
+
+### Technical Implementation  
+- 📡 **Data Handling**:  
+  - Fetches guests and hotels via `useMockApi`  
+  - Sorts guests by status priority:  
+    ```ts
+    ['Active', 'Pending', 'Retired', 'Revoked', 'Excommunicado', 'Deceased']
+    ```  
+
+- ⚙️ **Filter Logic**:  
+  - Uses `useEffect` dependencies for efficient re-filtering  
+  - Maintains filter state while avoiding unnecessary re-renders  
+
+- 🛡️ **Error States**:  
+  - Handles API failures with themed error messages  
+  - Loading state with Continental-themed UI  
+
+### UI/UX Elements  
+- Filter tags show active selections  
+- Responsive grid layout  
+- Visual hierarchy for critical information (bounties/markers)  
+- Empty state when no filters match  
+
+## HotelList Component  
+```tsx
+<HotelList />
 ```
+
+**Purpose**: Displays all Continental Hotels with their current guests and statuses  
+
+### Key Features  
+- 📡 **Data Fetching**:  
+  - Uses `useMockApi` to fetch hotels and guests data  
+  - Handles loading/error states with elegant fallback UI  
+
+- 🏨 **Hotel Display**:  
+  - Shows hotel details (name, location, manager)  
+  - Visual status badges (`GuestStatusBadge`)  
+  - Lists house rules for each location  
+
+- 🕴️ **Guest Management**:  
+  - Filters and sorts guests by status priority:  
+    ```ts
+    ['Excommunicado', 'Revoked', 'Deceased', 'Active', 'Retired']
+    ```  
+  - Displays guest details with `GuestStatusBadge` components  
+  - Highlights unpaid markers (red badge)  
+
+- 🎨 **Styling**:  
+  - Responsive grid layout (1-3 columns)  
+  - Continental-themed colors and shadows  
+
+### Technical Notes  
+- Type-safe props/interfaces (`Hotel`, `Guest` types)  
+- Data validation for `activeGuests` array  
+- Pure UI component (state managed internally)

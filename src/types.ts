@@ -13,6 +13,9 @@ export type Guest = {
   specialty: string;
   markersOwed: number;
   lastLocation: string;
+  codename: string;
+  markersFulfilled: number;
+  activeBounty: number;
 };
 
 export type Hotel = {

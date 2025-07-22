@@ -1,4 +1,3 @@
-// src/api/mockAdapter.ts
 import mockData from './mockData.json';
 
 export function initMockAdapter() {

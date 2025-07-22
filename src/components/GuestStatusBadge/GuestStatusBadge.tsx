@@ -5,7 +5,8 @@ const statusStyles: Record<GuestStatus, string> = {
   'Retired': 'retired',
   'Deceased': 'deceased',
   'Revoked': 'revoked',
-  'Excommunicado': 'excommunicado'
+  'Excommunicado': 'excommunicado',
+  'Pending': 'pending'
 };
 
 interface GuestStatusBadgeProps {
@@ -29,7 +30,7 @@ export const GuestStatusBadge = ({ statuses, guestId }: GuestStatusBadgeProps) =
     <div className="guest-status-badge">
       {sortedStatuses.map((status, index) => (
         <span
-          key={`${guestId}-${status}-${index}`} // Unique key combining guestId, status, and index
+          key={`${guestId}-${status}-${index}`}
           className={`${statusStyles[status]}-badge`}
           title={getStatusTooltip(status)}
         >

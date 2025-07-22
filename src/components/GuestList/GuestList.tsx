@@ -195,7 +195,7 @@ export const GuestList = () => {
           <div className="active-filters-display">
             <span>Showing: </span>
             {activeFilters.map(filter => (
-              <span key={filter} className="filter-tag">
+              <span key={filter} className="filter-tag" data-testid="filter-tag">
                 {filter.charAt(0).toUpperCase() + filter.slice(1)}
               </span>
             ))}
@@ -216,7 +216,7 @@ export const GuestList = () => {
                 <div className="guest-header">
                   <h3>
                     {guest.name} 
-                    {guest.codename && <span className="codename"> | "{guest.codename}"</span>}
+                    {guest.codename && <span className="codename">"{guest.codename}"</span>}
                   </h3>
                   <GuestStatusBadge 
                     statuses={guest.status} 
@@ -267,7 +267,7 @@ export const GuestList = () => {
             );
           })
         ) : (
-          <div className="no-results">
+          <div className="no-results" data-testid="no-results-message">
             <p>No guests found matching the selected filters</p>
             <small>Consult the High Table for more information</small>
           </div>

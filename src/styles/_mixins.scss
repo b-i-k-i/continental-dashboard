@@ -1,6 +1,13 @@
+// Badges
 @mixin status-badge($status) {
   $colors: map-get($status-colors, $status);
   background-color: map-get($colors, bg);
   color: map-get($colors, text);
   border-color: map-get($colors, border);
 }
+
+// BIKI:
+
+// Buttons
+// Labels
+// Tooltips

@@ -5,7 +5,7 @@
       "name": "The Continental New York",
       "location": "Manhattan, NY",
       "manager": "Winston Scott",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 12500000,
       "annualExpenses": 8500000,
       "rules": [
@@ -20,7 +20,7 @@
       "name": "Le Continental Paris",
       "location": "Rue de la Paix",
       "manager": "Julius",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 9800000,
       "annualExpenses": 6200000,
       "rules": [
@@ -35,7 +35,7 @@
       "name": "Il Continental Roma",
       "location": "Piazza Navona",
       "manager": "Dante Moretti",
-      "consecrationStatus": "Conditional",
+      "status": "Conditional",
       "annualRevenue": 7500000,
       "annualExpenses": 5500000,
       "rules": [
@@ -50,7 +50,7 @@
       "name": "The Continental Tokyo",
       "location": "Ginza District",
       "manager": "Akira Shimazu",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 11000000,
       "annualExpenses": 6800000,
       "rules": [
@@ -65,7 +65,7 @@
       "name": "El Continental Ciudad de México",
       "location": "Zona Rosa",
       "manager": "Carmen Mendoza",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 8200000,
       "annualExpenses": 5800000,
       "rules": [
@@ -79,7 +79,7 @@
       "name": "O Continental Rio",
       "location": "Copacabana",
       "manager": "Luis Oliveira",
-      "consecrationStatus": "Conditional",
+      "status": "Conditional",
       "annualRevenue": 7800000,
       "annualExpenses": 6200000,
       "rules": [
@@ -93,7 +93,7 @@
       "name": "The Continental Cape Town",
       "location": "Victoria & Alfred Waterfront",
       "manager": "Nomsa Khumalo",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 7100000,
       "annualExpenses": 4900000,
       "rules": [
@@ -107,7 +107,7 @@
       "name": "The Continental Cairo",
       "location": "Garden City",
       "manager": "Amir El-Sayed",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 6800000,
       "annualExpenses": 5200000,
       "rules": [
@@ -121,7 +121,7 @@
       "name": "Al Continental Riyadh",
       "location": "Al Olaya District",
       "manager": "Yousef Al-Faisal",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 9500000,
       "annualExpenses": 5500000,
       "rules": [
@@ -136,7 +136,7 @@
       "name": "The Continental Tallinn",
       "location": "Old Town",
       "manager": "Marta Kask",
-      "consecrationStatus": "Conditional",
+      "status": "Conditional",
       "annualRevenue": 5300000,
       "annualExpenses": 4100000,
       "rules": [
@@ -150,7 +150,7 @@
       "name": "The Continental Mumbai",
       "location": "Colaba",
       "manager": "Rajiv Malhotra",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 8800000,
       "annualExpenses": 6700000,
       "rules": [
@@ -163,7 +163,7 @@
       "name": "The Continental Oslo",
       "location": "Aker Brygge",
       "manager": "Ingrid Solberg",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 7200000,
       "annualExpenses": 4800000,
       "rules": [
@@ -177,7 +177,7 @@
       "name": "The Continental Shanghai",
       "location": "The Bund",
       "manager": "Wei Zhang",
-      "consecrationStatus": "Conditional",
+      "status": "Conditional",
       "annualRevenue": 12500000,
       "annualExpenses": 8200000,
       "rules": [
@@ -191,7 +191,7 @@
       "name": "The Continental Sydney",
       "location": "Circular Quay",
       "manager": "Jack Taylor",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 9200000,
       "annualExpenses": 6500000,
       "rules": [
@@ -205,7 +205,7 @@
       "name": "El Continental Barcelona",
       "location": "Las Ramblas",
       "manager": "Isabella Cortez",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 8700000,
       "annualExpenses": 5900000,
       "rules": [
@@ -218,7 +218,7 @@
       "name": "The Continental Bangkok",
       "location": "Silom District",
       "manager": "Somsak Chaiwat",
-      "consecrationStatus": "Conditional",
+      "status": "Conditional",
       "annualRevenue": 8100000,
       "annualExpenses": 5700000,
       "rules": [
@@ -232,7 +232,7 @@
       "name": "The Continental Seoul",
       "location": "Gangnam District",
       "manager": "Min-ji Park",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 9400000,
       "annualExpenses": 6800000,
       "rules": [
@@ -247,7 +247,7 @@
       "name": "Al Continental Dubai",
       "location": "Downtown Dubai",
       "manager": "Khalid Al-Maktoum",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 15000000,
       "annualExpenses": 9000000,
       "rules": [
@@ -262,7 +262,7 @@
       "name": "Das Continental Berlin",
       "location": "Mitte District",
       "manager": "Klaus Mueller",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 8300000,
       "annualExpenses": 6000000,
       "rules": [
@@ -277,7 +277,7 @@
       "name": "The Continental Nairobi",
       "location": "Westlands",
       "manager": "Wanjiku Mwangi",
-      "consecrationStatus": "Conditional",
+      "status": "Conditional",
       "annualRevenue": 6700000,
       "annualExpenses": 4900000,
       "rules": [
@@ -291,7 +291,7 @@
       "name": "El Continental Buenos Aires",
       "location": "Recoleta",
       "manager": "Diego Morales",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 7600000,
       "annualExpenses": 5500000,
       "rules": [
@@ -305,7 +305,7 @@
       "name": "The Continental Toronto",
       "location": "Yorkville",
       "manager": "Sarah MacKenzie",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 8900000,
       "annualExpenses": 6100000,
       "rules": [
@@ -320,7 +320,7 @@
       "name": "The Continental Singapore",
       "location": "Marina Bay",
       "manager": "Wei Ling Tan",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 13500000,
       "annualExpenses": 8500000,
       "rules": [
@@ -335,7 +335,7 @@
       "name": "The Continental Istanbul",
       "location": "Beyoğlu",
       "manager": "Emre Yılmaz",
-      "consecrationStatus": "Sacred",
+      "status": "Consecrated",
       "annualRevenue": 9200000,
       "annualExpenses": 6400000,
       "rules": [
@@ -349,7 +349,7 @@
       "name": "The Continental Moscow",
       "location": "Red Square District",
       "manager": "Viktor Petrov",
-      "consecrationStatus": "Excommunicado",
+      "status": "Excommunicado",
       "annualRevenue": 6500000,
       "annualExpenses": 7000000,
       "rules": [

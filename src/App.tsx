@@ -16,21 +16,13 @@ function App() {
   return (
     <main className="continental-app">
       <header className="app-header">
-        <div className="logo-group">
-          <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-            <img src="/vite.svg" className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-            <img src="/react.svg" className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>Continental Manager</h1>
+        <h1>High Table Guest Insights</h1>
       </header>
 
       <section className="content-section">
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Suspense fallback={<Loading message="Loading analytics..." />}>
-            <GuestStatusChart />
+            <GuestStatusChart onStatusClick={(status) => console.log(status)}/>
           </Suspense>
         </ErrorBoundary>
       </section>

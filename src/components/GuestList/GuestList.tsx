@@ -140,7 +140,7 @@ export const GuestList = () => {
 
   return (
     <div className="guest-list">
-      <div className="list-header">
+      <div className="guest-list__header">
         <h2>
           <span className="gold-text">Continental Guest Ledger</span>
           <span className="badge">{filteredGuests.length} of {allGuests.length} shown</span>
@@ -203,7 +203,7 @@ export const GuestList = () => {
         )}
       </div>
 
-      <ul className="guest-grid">
+      <ul className="guest-list__guest-grid">
         {filteredGuests.length > 0 ? (
           filteredGuests.map(guest => {
             const hotel = getGuestHotel(guest.id);
@@ -212,11 +212,11 @@ export const GuestList = () => {
             const isExcommunicado = guest.status.includes("Excommunicado") && !guest.status.includes("Deceased");
             
             return (
-              <li key={guest.id} className={`guest-card ${markerSeverity}-marker`}>
-                <div className="guest-header">
+              <li key={guest.id} className={`guest-list__guest-card ${markerSeverity}-marker`}>
+                <div className="guest-list__guest-card--header">
                   <h3>
                     {guest.name} 
-                    {guest.codename && <span className="codename">"{guest.codename}"</span>}
+                    {guest.codename && <span className="guest-list__guest-card--codename">"{guest.codename}"</span>}
                   </h3>
                   <GuestStatusBadge 
                     statuses={guest.status} 

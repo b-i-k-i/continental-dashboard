@@ -4,19 +4,20 @@
   font-family: 'Helvetica Neue', sans-serif;
 
   h2 {
+    // BIKI: Remove static hex
     color: #c0a062;
     border-bottom: 1px solid #c0a062;
     padding-bottom: 0.5rem;
   }
 
-  .hotel-grid {
+  &__wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 1.5rem;
   }
 
-  .hotel-card {
+  &__card {
     // BIKI: kill static hexes
     background: #1a1a1a;
     color: #e0e0e0;
@@ -30,7 +31,7 @@
       margin: 0.5rem 0;
     }
 
-    .guest-section {
+    &--guest-section {
       margin: 1.5rem 0;
       padding: 1rem;
       background: rgba(0,0,0,0.3);

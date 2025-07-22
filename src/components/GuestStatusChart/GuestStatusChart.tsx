@@ -25,12 +25,12 @@ export const GuestStatusChart = ({ onStatusClick, activeFilters = [] }: GuestSta
   };
 
   return (
-    <section 
+    <section id="hotel-list"
       className="guest-status-chart"
       aria-labelledby="chart-title"
       role="region"
     >
-      <h3 id="chart-title">Global Guest Status</h3>
+      <h3 id="chart-title">Global Hotels | Guest Status</h3>
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={400}>
           <PieChart
@@ -55,7 +55,7 @@ export const GuestStatusChart = ({ onStatusClick, activeFilters = [] }: GuestSta
                 <Cell
                   key={`cell-${entry.id}`}
                   id={entry.id}
-                  className={`status-${entry.id} ${
+                  className={`status-${entry.id.toLowerCase()} ${
                     activeFilters.includes(entry.name) ? 'active-segment' : ''
                   }`}
                   style={{ cursor: 'pointer' }}
@@ -80,9 +80,9 @@ export const GuestStatusChart = ({ onStatusClick, activeFilters = [] }: GuestSta
                 `Status: ${name}`
               ]}
               contentStyle={{
-                backgroundColor: 'var(--bg-continental-darker)',
-                borderColor: 'var(--color-gold)',
-                color: 'var(--text-color)'
+                backgroundColor: 'black',
+                borderColor: '',
+                color: ''
               }}
             />
             <Legend

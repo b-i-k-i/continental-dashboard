@@ -17,15 +17,15 @@ function App() {
     <main className="continental-app">
       <header className="app-header">
         <h1>High Table Guest Insights</h1>
+
+        <ul>
+          <li>
+            <a href="#hotel-list">Jump to Global Hotels</a>
+          </li>
+        </ul>
       </header>
 
-      <section className="content-section">
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <Suspense fallback={<Loading message="Loading analytics..." />}>
-            <GuestStatusChart onStatusClick={(status) => console.log(status)}/>
-          </Suspense>
-        </ErrorBoundary>
-      </section>
+     
 
       <section className="content-section">
         <ErrorBoundary
@@ -34,6 +34,14 @@ function App() {
         >
           <Suspense fallback={<Loading message="Loading guests..." fullScreen={false} />}>
             <GuestList />
+          </Suspense>
+        </ErrorBoundary>
+      </section>
+
+      <section className="content-section">
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Suspense fallback={<Loading message="Loading analytics..." />}>
+            <GuestStatusChart onStatusClick={(status) => console.log(status)}/>
           </Suspense>
         </ErrorBoundary>
       </section>

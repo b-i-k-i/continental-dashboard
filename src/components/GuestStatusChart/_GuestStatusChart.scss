@@ -37,10 +37,11 @@
     border: none !important;
     border-radius: 0.25rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    color: white;
+    background-color: white;
+    color: black;
 
     &-label {
-      color: white !important;
+      color: black !important;
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
@@ -72,14 +73,6 @@
         color: $text-color !important;
         font-size: 0.875rem;
       }
-
-      // Match legend colors to status colors
-      @each $status, $colors in $status-colors {
-        &[class*='#{$status}'] .recharts-legend-icon {
-          background-color: map-get($colors, 'bg');
-          border-color: map-get($colors, 'border');
-        }
-      }
     }
   }
 
@@ -96,3 +89,4 @@
     outline-offset: 2px;
   }
 }
+
